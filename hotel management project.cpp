@@ -507,7 +507,7 @@ int main(){
 
        default :
             
-            cout<<"Please Enter a Valid Feature Number!";
+            cout<<"Please Enter a Valid Feature Number!\n";
             break;
          }
       cout<<"Do You Want To Select another Feature (y/n) :";
