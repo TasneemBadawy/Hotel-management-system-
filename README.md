@@ -20,6 +20,8 @@ A simple Console-based Hotel Managment system  built in c++ that allows room boo
  -  README.md: provides a documentation for this project.
 
    ## Contributers
-  -**Tasneem** - Food and beverages, & the draw function.
--**Aya Khalid** - Room Booking.
--**Yasmeen Ahmed** - Bill and payment, checking the ID.
+ - **Tasneem** - Food and beverages, & the draw function.  
+- **Aya Khalid** - Room Booking.  
+- **Yasmeen Ahmed** - Bill and payment, checking the ID.
+  ## Note
+This project focuses on the basics and aims to enhance and develop them. 
