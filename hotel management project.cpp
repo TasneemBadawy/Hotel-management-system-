@@ -286,7 +286,9 @@ int totalfbcost=0;     //making the total of food and beverage global to be acce
 
 // food and beverages function
 void Foodbeverage(){
-      float foodnumber,price,quantity;
+       system("color 70");
+      char foodnumber;
+      float price,quantity;
        char choice;
 
 cout<<"=================\n";
@@ -315,22 +317,24 @@ for(int i=0;i<13;i++){
       do {
             cout<<"Enter The Food number : ";
             cin>>foodnumber;
-         
+              cin.ignore(); // clear the buffer
            // checks the foodnumber that the user enter
 
-        if( foodnumber <=0 || (foodnumber >= 65 && foodnumber <= 90)|| (foodnumber >= 97 && foodnumber <= 122) || (int)foodnumber != foodnumber ){
-                  cout<<"please enter a valid number :\n";
-                       break;
+       while ( foodnumber != '1' && foodnumber != '2' && foodnumber !='3' && foodnumber !='5' && foodnumber !='6' && foodnumber !='8' && foodnumber !='9'&& foodnumber!='11'&& foodnumber!='12' ){
+                  cout<<"please enter a valid number :";
+                    cin>>foodnumber;
+             cin.ignore(); // clear the buffer
             }
 
             cout<<"Enter The quantity :";
             cin>>quantity ; 
-
+          cin.ignore(); // clear the buffer
              // checks the quantity that the user enter
 
              if( quantity <=0 || (quantity >= 65 && quantity <= 90)|| (quantity >= 97 && quantity <= 122) || (int)quantity != quantity ){
                   cout<<"\nplease enter a specified quantity :";
                   cin>>quantity ; 
+                   cin.ignore(); // clear the buffer
              }
 
       //determine the price
@@ -443,7 +447,7 @@ for(int i=0;i<13;i++){
       //calculate the total
       totalfbcost += price * quantity;
 
-      cout << "\nDo you want to order another item? (y/n): ";
+      cout << "Do you want to order another item? (y/n): ";
         cin >> choice;
       }
 
@@ -452,6 +456,7 @@ for(int i=0;i<13;i++){
 
 //function that Display the Bill and payment
 void billpayment(){
+      system("color 0A");
     // Calculating final total
     int totalamount = totalroomcost + totalfbcost;
 
@@ -477,7 +482,7 @@ int main(){
 
     featuresMenu();        //prints the features to make the user choose
 
-    int featurenumber ;   //input the number of Feature
+    char featurenumber ;   //input the number of Feature
 
     char answer;
 
@@ -487,20 +492,29 @@ int main(){
       cout<<"Choose the Feature number : ";
      cin>>featurenumber;
      cout <<"\n";
+         // check the inputed feature number
+        while (cin.fail()||featurenumber<'1' || featurenumber>'3'){
+            cin.clear();
+        cin.ignore(1000, '\n');
+
+            cout<<"Please enter a valid number !:";
+            cin>>featurenumber;
+      }
+
      
      switch(featurenumber){
          
-       case 1:   // Rooms
+       case '1':   // Rooms
 
              selection();
                 break;
 
-       case 2:   //food and beverages
+       case '2':   //food and beverages
 
              Foodbeverage();
              break;
 
-       case 3:      // bill and payment
+       case '3':      // bill and payment
             
             billpayment();
             break;
