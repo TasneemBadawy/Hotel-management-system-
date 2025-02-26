@@ -287,7 +287,7 @@ int totalfbcost=0;     //making the total of food and beverage global to be acce
 // food and beverages function
 void Foodbeverage(){
        system("color 70");
-      char foodnumber;
+      string foodnumber;
       float price,quantity;
        char choice;
 
@@ -320,7 +320,7 @@ for(int i=0;i<13;i++){
               cin.ignore(); // clear the buffer
            // checks the foodnumber that the user enter
 
-       while ( foodnumber != '1' && foodnumber != '2' && foodnumber !='3' && foodnumber !='5' && foodnumber !='6' && foodnumber !='8' && foodnumber !='9'&& foodnumber!='11'&& foodnumber!='12' ){
+while ( foodnumber != "1" && foodnumber != "2" && foodnumber !="3" && foodnumber !="5" && foodnumber !="6" && foodnumber !="8" && foodnumber !="9"&& foodnumber!="11"&& foodnumber!="12" ){
                   cout<<"please enter a valid number :";
                     cin>>foodnumber;
              cin.ignore(); // clear the buffer
@@ -339,7 +339,7 @@ for(int i=0;i<13;i++){
 
       //determine the price
       price = 0;
-       switch((int)foodnumber){
+       switch(stoi(foodnumber)){
 
     case 1://blackcoffee
 
@@ -439,9 +439,7 @@ for(int i=0;i<13;i++){
         browniestock -= quantity;
         break;
 
-       default:
-            cout<<"Invalid food number entered.\n";
-      continue; //skip adding the total
+      
       }
 
       //calculate the total
