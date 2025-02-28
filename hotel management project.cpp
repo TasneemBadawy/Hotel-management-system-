@@ -234,39 +234,41 @@ cout <<"\n";
     
     //function make customer Select
    void selection (){
-       int choice;
+     char choice;
 
-       cout<<"1- display Available Rooms \n";
-       cout<<"2- book room \n";
-       cout<<"3- cancel the book \n";
-       cout<<"0- Exit\n";
+       cout<<"1) display Available Rooms \n";
+       cout<<"2) book room \n";
+       cout<<"3) cancel the book \n";
        cout<<"Enter your choice :";
        cin>>choice;
        cout<<"\n";
-       switch (choice){
+          while (cin.fail()||choice <'1' || choice > '3'){
+            cin.clear();
+        cin.ignore(1000, '\n');
+
+            cout<<"Please enter a valid number !:";
+            cin>> choice;
+      }
+
+       switch ((int) choice){
    
-           case 1:
+           case '1' :
    
                  Available_Rooms();
                  cout<<"\n";
                  break;
    
-            case 2:
+            case '2' :
    
                  BookRoom();
                  cout<<"\n";   
                  break;
   
-            case 3 :
+            case '3' :
                  
                  cancelbooking();
                   cout<<"\n";
                   break;
-        
-            case 0:
-   
-                 cout<<"Thank You :)\n";
-                 break;
    
             default :
    
