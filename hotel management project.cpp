@@ -220,6 +220,9 @@ cout <<"\n";
                 if(booked[i]==true){
                     booked[i]=false;
                     cout<<"Room number " << Roomnumber << " has been canceled successfully \n";
+                       totalroomcost -=person.nightstayed*room_price[i];
+                       person.nightstayed=0;
+                        person.name ="";
                 }
                 
                 else{
