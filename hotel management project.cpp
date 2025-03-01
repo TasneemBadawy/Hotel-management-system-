@@ -21,8 +21,11 @@ cout<<"\t\t\t|                                  |\n";
 cout<<"\t\t\t====================================\n";
 
 time_t currentDT = time(0);
- cout << "\n\t\t\tDate and Time : " << ctime(&currentDT);
- cout<<"\n";
+  
+ char buffer[26];  // Buffer to hold the formatted date/time string
+errno_t err = ctime_s(buffer, sizeof(buffer), &currentDT);  // Convert time to string
+
+cout << "\n\t\t\tDate and Time : " << buffer;
 }
 
  // the number of rooms in hotel
@@ -456,7 +459,7 @@ while ( foodnumber != "1" && foodnumber != "2" && foodnumber !="3" && foodnumber
 
 //function that Display the Bill and payment
 void billpayment(){
-      system("color 0A");
+      system("color 0D");
     // Calculating final total
     int totalamount = totalroomcost + totalfbcost;
 
