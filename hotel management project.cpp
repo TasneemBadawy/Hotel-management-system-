@@ -264,7 +264,7 @@ cout<<"Enter the number of rooms : ";
             cin>> choice;
       }
 
-       switch ((int) choice){
+       switch (choice){
    
            case '1' :
    
