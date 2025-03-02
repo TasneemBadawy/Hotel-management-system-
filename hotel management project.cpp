@@ -122,10 +122,18 @@ cout <<"\n";
        cin.ignore(100000,'\n');
        cin>>person.id;
  }
-
- cout<<"Enter the number of rooms : ";
+do{
+      
+cout<<"Enter the number of rooms : ";
  cin>>person.numberrooms ;
  cout << "\n";
+ 
+     if (total_number_room > 5){
+          cout<<"Invalid number, Try again.\n";
+              }
+            }
+            while(total_number_room > 5);
+ 
  
  // check if Number of guests valid
   do{
