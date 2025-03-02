@@ -295,9 +295,10 @@ int totalfbcost=0;     //making the total of food and beverage global to be acce
 // food and beverages function
 void Foodbeverage(){
        system("color 70");
-      string foodnumber;
-      float price,quantity;
+      string foodnumber , quantityInput;
+      float price;
        char choice;
+      int quantity;
 
 cout<<"=================\n";
 cout<<"|               |\n";
@@ -334,16 +335,20 @@ while ( foodnumber != "1" && foodnumber != "2" && foodnumber !="3" && foodnumber
              cin.ignore(); // clear the buffer
             }
 
-            cout<<"Enter The quantity :";
-            cin>>quantity ; 
-          cin.ignore(); // clear the buffer
-             // checks the quantity that the user enter
+            while (true) {
+              cout << "Enter The quantity :";
+    getline(cin, quantityInput); // get the input
 
-             if( quantity <=0 || (quantity >= 65 && quantity <= 90)|| (quantity >= 97 && quantity <= 122) || (int)quantity != quantity ){
-                  cout<<"\nplease enter a specified quantity :";
-                  cin>>quantity ; 
-                   cin.ignore(); // clear the buffer
-             }
+    // use the stringstream to convert the input to integer
+
+    stringstream ss(quantityInput);
+    if (ss >> quantity && ss.eof()) {
+        if (quantity >= 1 && quantity <= 20) {
+            break; // the input is valid
+        }
+    }
+    cout << " Please enter a valid quantity!, ";
+}
 
       //determine the price
       price = 0;
