@@ -113,7 +113,7 @@ cout << "\n\t\t\tDate and Time : " << buffer;
 cout <<"\n";
  // call function that checks the id
   while(!isValidNationalID(person.id)){
-        cout << "Invalid National ID. It must be exactly 14 digits ,Try again :\n";
+        cout << "Invalid National ID. It must be exactly 14 digits ,Try again :";
  
        // clear the previous input
         cin.clear();
@@ -124,7 +124,7 @@ cout <<"\n";
  }
 do{
       
-cout<<"Enter the number of rooms : ";
+cout<<"\nEnter the number of rooms : ";
  cin>>person.numberrooms ;
  cout << "\n";
  
@@ -560,7 +560,7 @@ cout <<"\n";
 cin.ignore();
 
  if(person.rateing <= 3){
-      cout<<"please give us your recomendations yo enhance your visit the next time : ";
+      cout<<"please give us your recomendations to enhance your visit the next time : ";
 
       getline(cin,person.recomendation);
       cout <<"\n";
